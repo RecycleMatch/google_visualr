@@ -198,16 +198,16 @@ module GoogleVisualr
 
       script  = "\n<script type='text/javascript'>"
       script << "\n  //<![CDATA["
-      script << "\n  google.load('visualization','1', {packages: ['#{options[:package].downcase}'], callback: function() {"
-      script << "\n    #{@chart_data}"
+      script << "\n    google.load('visualization','1', {packages: ['#{options[:package].downcase}'], callback: function() {"
+      script << "\n      #{@chart_data}"
       if @formatters
         @formatters.each do |formatter|
           script << formatter.script
         end
       end
-      script << "\n    var chart = new google.visualization.#{options[:package]}(document.getElementById('#{options[:element_id]}'));"
-      script << "\n    chart.draw(chart_data, #{options[:chart_style]});"
-      script << "\n  }});"
+      script << "\n      var chart = new google.visualization.#{options[:package]}(document.getElementById('#{options[:element_id]}'));"
+      script << "\n      chart.draw(chart_data, #{options[:chart_style]});"
+      script << "\n    }});"
       script << "\n  //]]>"
       script << "\n</script>"
 
