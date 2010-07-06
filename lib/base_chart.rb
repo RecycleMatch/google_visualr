@@ -13,7 +13,7 @@ module GoogleVisualr
     # Creates an empty visualization instance. Use add_columns, add_rows and set_value or set_cell methods to populate the visualization.
     #
     # GoogleVisualr::visualization.new(data object):
-    # reates a visualization by passing a JavaScript-string-literal like data object into the data parameter. This object can contain formatting options.
+    # Creates a visualization by passing a JavaScript-string-literal like data object into the data parameter. This object can contain formatting options.
     #
     ##############################
     # Syntax Description of Data Object
@@ -26,7 +26,7 @@ module GoogleVisualr
     #   cols is an array of objects describing the ID and type of each column. Each property is an object with the following properties (case-sensitive):
     #
     #   * type            [Required] The data type of the data in the column. Supports the following string values:
-    #     - 'string'    : String value. Example values: v:'foo', :v:'bar'
+    #     - 'string'    : String value. Example values: v:'foo', v:'bar'
     #     - 'number'    : Number value. Example values: v:7, v:3.14, v:-55
     #     - 'boolean'   : Boolean value ('true' or 'false'). Example values: v:true, v:false
     #     - 'date'      : Date object, with the time truncated. Example value: v:Date.parse('2010-01-01')
