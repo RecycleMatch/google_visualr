@@ -31,12 +31,17 @@ module GoogleVisualr
 
       options = Hash.new
 
-      options[:package]     = self.class.to_s.split('::').last
       options[:element_id]  = element_id
       options[:chart_style] = collect_parameters
 
       super(options)
 
+    end
+
+    protected
+    
+    def google_package
+      return "corechart"
     end
 
   end

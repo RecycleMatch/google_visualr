@@ -198,14 +198,14 @@ module GoogleVisualr
 
       script  = "\n<script type='text/javascript'>"
       script << "\n  //<![CDATA["
-      script << "\n    google.load('visualization','1', {packages: ['#{options[:package].downcase}'], callback: function() {"
+      script << "\n    google.load('visualization','1', {packages: ['#{determine_google_package}'], callback: function() {"
       script << "\n      #{@chart_data}"
       if @formatters
         @formatters.each do |formatter|
           script << formatter.script
         end
       end
-      script << "\n      var chart = new google.visualization.#{options[:package]}(document.getElementById('#{options[:element_id]}'));"
+      script << "\n      var chart = new google.visualization.#{determine_google_class}(document.getElementById('#{options[:element_id]}'));"
       script << "\n      chart.draw(chart_data, #{options[:chart_style]});"
       script << "\n    }});"
       script << "\n  //]]>"
@@ -214,8 +214,30 @@ module GoogleVisualr
       return script
 
     end
-
+        
+    protected
+    
+    # Defines the concrete google api package name
+    def google_package
+      return nil
+    end
+    
+    # Defines the concrete google api class name
+    def google_class
+      return nil
+    end
+    
     private
+    
+    # Determines the google api package name
+    def determine_google_package
+      return (google_package || self.class.to_s.split('::').last.downcase)
+    end
+
+    # Determines the google api class name
+    def determine_google_class
+      return (google_class || self.class.to_s.split('::').last)
+    end
 
     def add_row_cell(cell)
 

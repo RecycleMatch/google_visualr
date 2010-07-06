@@ -24,7 +24,7 @@ module GoogleVisualr
     attr_accessor :logScale
     attr_accessor :max
     attr_accessor :min
-    attr_accessor :reverseAxis
+    attr_accessor :reverseCategories
     attr_accessor :showCategories
     attr_accessor :title
     attr_accessor :titleX
@@ -40,12 +40,17 @@ module GoogleVisualr
 
       options = Hash.new
 
-      options[:package]     = self.class.to_s.split('::').last
       options[:element_id]  = element_id
       options[:chart_style] = collect_parameters
 
       super(options)
 
+    end
+
+    protected
+    
+    def google_package
+      return "corechart"
     end
 
   end

@@ -37,7 +37,7 @@ module GoogleVisualr
 
       options = Hash.new
 
-      options[:package]     = self.class.to_s.split('::').last
+      
       options[:element_id]  = element_id
       options[:chart_style] = collect_parameters
 
