@@ -197,6 +197,7 @@ module GoogleVisualr
     def render(options)
 
       script  = "\n<script type='text/javascript'>"
+      script << "\n  //<![CDATA["
       script << "\n  google.load('visualization','1', {packages: ['#{options[:package].downcase}'], callback: function() {"
       script << "\n    #{@chart_data}"
       if @formatters
@@ -207,6 +208,7 @@ module GoogleVisualr
       script << "\n    var chart = new google.visualization.#{options[:package]}(document.getElementById('#{options[:element_id]}'));"
       script << "\n    chart.draw(chart_data, #{options[:chart_style]});"
       script << "\n  }});"
+      script << "\n  //]]>"
       script << "\n</script>"
 
       return script
