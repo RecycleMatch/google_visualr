@@ -277,6 +277,10 @@ module GoogleVisualr
           return "new Date(#{value.year}, #{value.month-1}, #{value.day}, #{value.hour}, #{value.min}, #{value.sec})"
         when value.is_a?(Array)
           return "[" + value.collect { |item| typecast(item) }.join(",") + "]"
+        when value.is_a?(Hash)
+          res = Array.new
+          value.each_pair{|key, value| res.push("#{key}:'#{value}'")}
+          return "{#{res.join(",")}}"
         else
           return value
       end

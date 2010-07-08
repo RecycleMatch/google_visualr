@@ -21,20 +21,18 @@ module GoogleVisualr
     attr_accessor :legendBackgroundColor
     attr_accessor :legendFontSize
     attr_accessor :legendTextColor
-    attr_accessor :logScale
-    attr_accessor :max
-    attr_accessor :min
     attr_accessor :reverseCategories
     attr_accessor :showCategories
     attr_accessor :title
-    attr_accessor :titleX
-    attr_accessor :titleY
     attr_accessor :titleColor
     attr_accessor :titleFontSize
     attr_accessor :tooltipFontSize
     attr_accessor :tooltipHeight
     attr_accessor :tooltipWidth
     attr_accessor :width
+        
+    attr_accessor :vAxis
+    attr_accessor :hAxis
 
     def render (element_id)
 

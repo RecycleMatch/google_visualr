@@ -23,8 +23,6 @@ module GoogleVisualr
     attr_accessor :fill
     attr_accessor :highlightDot
     attr_accessor :legendPosition
-    attr_accessor :max
-    attr_accessor :min
     attr_accessor :numberFormats
     attr_accessor :scaleColumns
     attr_accessor :scaleType
@@ -32,6 +30,9 @@ module GoogleVisualr
     attr_accessor :wmode
     attr_accessor :zoomEndTime
     attr_accessor :zoomStartTime
+
+    attr_accessor :vAxis
+    attr_accessor :hAxis
 
     def render (element_id)
 
