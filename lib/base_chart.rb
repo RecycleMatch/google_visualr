@@ -3,7 +3,6 @@ module GoogleVisualr
   class BaseChart
 
     attr_accessor :chart_data
-    attr_accessor :element_id
     attr_accessor :formatters
 
     ##############################
