@@ -2,9 +2,8 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/scatterchart.html
   class ScatterChart < BaseChart
+    include GoogleVisualr::Packages::CoreChart
     # NOTE: attributes checked
-
-    attr_accessor :element_id
 
     # http://code.google.com/apis/visualization/documentation/gallery/scatterchart.html#Configuration_Options
     #attr_accessor :axisColor
@@ -32,23 +31,6 @@ module GoogleVisualr
     #attr_accessor :tooltipWidth
     attr_accessor :vAxis
     attr_accessor :width
-
-    def render (element_id)
-
-      options = Hash.new
-
-      options[:element_id]  = element_id
-      options[:chart_style] = collect_parameters
-
-      super(options)
-
-    end
-
-    protected
-    
-    def google_package
-      return "corechart"
-    end
 
   end
 

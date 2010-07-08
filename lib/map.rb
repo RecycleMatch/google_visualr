@@ -4,8 +4,6 @@ module GoogleVisualr
   class Map < BaseChart
     # NOTE: attributes checked
 
-    attr_accessor :element_id
-
     # http://code.google.com/apis/visualization/documentation/gallery/map.html#Configuration_Options
     attr_accessor :enableScrollWheel
     attr_accessor :showTip
@@ -15,18 +13,6 @@ module GoogleVisualr
     attr_accessor :mapType
     attr_accessor :useMapTypeControll
     attr_accessor :zoomLevel
-
-    def render (element_id)
-
-      options = Hash.new
-
-      options[:package]     = self.class.to_s.split('::').last
-      options[:element_id]  = element_id
-      options[:chart_style] = collect_parameters
-
-      super(options)
-
-    end
 
   end
 

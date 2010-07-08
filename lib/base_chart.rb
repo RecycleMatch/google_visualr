@@ -3,6 +3,7 @@ module GoogleVisualr
   class BaseChart
 
     attr_accessor :chart_data
+    attr_accessor :element_id
     attr_accessor :formatters
 
     ##############################
@@ -52,7 +53,7 @@ module GoogleVisualr
 
       @chart_data  = "var chart_data = new google.visualization.DataTable();"
 
-      if !options.empty?
+      unless options.empty?
 
         cols = options[:cols]
         add_columns(cols)
@@ -187,6 +188,17 @@ module GoogleVisualr
       end
 
     end
+    
+    def render (element_id)
+
+      options = Hash.new
+
+      options[:element_id]  = element_id
+      options[:chart_style] = collect_parameters
+
+      render_script_tag(options)
+
+    end
 
     # Generates JavaScript and renders the visualization in the final HTML output.
     #
@@ -194,7 +206,7 @@ module GoogleVisualr
     #  *div_id            [Required] The ID of the DIV element that the visualization should be rendered in.
     #
     # Note: This is the super method.
-    def render(options)
+    def render_script_tag(options)
 
       script  = "\n<script type='text/javascript'>"
       script << "\n  //<![CDATA["

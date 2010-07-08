@@ -4,8 +4,6 @@ module GoogleVisualr
   class AnnotatedTimeLine < BaseChart
     # NOTE: attributes checked
 
-    attr_accessor :element_id
-
     # http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html#Configuration_Options
     attr_accessor :allowHtml
     attr_accessor :allowRedraw
@@ -33,18 +31,6 @@ module GoogleVisualr
     attr_accessor :wmode
     attr_accessor :zoomEndTime
     attr_accessor :zoomStartTime
-
-    def render (element_id)
-
-      options = Hash.new
-
-      
-      options[:element_id]  = element_id
-      options[:chart_style] = collect_parameters
-
-      super(options)
-
-    end
 
   end
 
