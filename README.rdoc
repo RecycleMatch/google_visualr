@@ -30,7 +30,7 @@ Just install the GitHub repository into your app/vendor/plugin folder.
 
 = Basics
 
-This section describes a basic implementation of the GoogleVisualr::Visualization::AreaChart class.
+This section describes a basic implementation of the GoogleVisualr::Visualizations::AreaChart class.
 
 Please review the {Docs}[http://googlevisualr.heroku.com/docs] for detailed documentation and advanced implementation of constructors and methods.
 ---
@@ -41,7 +41,7 @@ In your Rails layout, load Google Ajax API in the head tag, at the very top.
 
 In your Rails controller, initialize a visualization (area chart) with an empty constructor.
 
-  @chart = GoogleVisualr::Visualization::AreaChart.new
+  @chart = GoogleVisualr::Visualizations::AreaChart.new
 
 Populate visualization with column headers, and row values.
 
