@@ -2,6 +2,7 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/imagesparkline.html
   class ImageSparkLine < BaseChart
+    # NOTE: attributes checked
 
     attr_accessor :element_id
 

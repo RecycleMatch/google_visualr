@@ -2,6 +2,7 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html
   class AnnotatedTimeLine < BaseChart
+    # NOTE: attributes checked
 
     attr_accessor :element_id
 
@@ -22,7 +23,9 @@ module GoogleVisualr
     attr_accessor :displayZoomButtons
     attr_accessor :fill
     attr_accessor :highlightDot
-    attr_accessor :legendPosition
+    attr_accessor :max
+    attr_accessor :min
+    # attr_accessor :legendPosition
     attr_accessor :numberFormats
     attr_accessor :scaleColumns
     attr_accessor :scaleType
@@ -30,9 +33,6 @@ module GoogleVisualr
     attr_accessor :wmode
     attr_accessor :zoomEndTime
     attr_accessor :zoomStartTime
-
-    attr_accessor :vAxis
-    attr_accessor :hAxis
 
     def render (element_id)
 

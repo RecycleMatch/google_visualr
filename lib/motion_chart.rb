@@ -2,6 +2,7 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/motionchart.html
   class MotionChart < BaseChart
+    # NOTE: attributes checked
 
     attr_accessor :element_id
 

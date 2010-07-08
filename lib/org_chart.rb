@@ -2,6 +2,7 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/orgchart.html
   class OrgChart < BaseChart
+    # NOTE: attributes checked
 
     attr_accessor :element_id
 

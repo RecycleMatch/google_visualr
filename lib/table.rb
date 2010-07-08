@@ -1,6 +1,7 @@
 module GoogleVisualr
 
   class Table < BaseChart
+    # NOTE: attributes checked
 
     # http://code.google.com/apis/visualization/documentation/gallery/table.html
     attr_accessor :element_id

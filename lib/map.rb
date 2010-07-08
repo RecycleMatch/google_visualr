@@ -2,6 +2,7 @@ module GoogleVisualr
 
   # http://code.google.com/apis/visualization/documentation/gallery/map.html
   class Map < BaseChart
+    # NOTE: attributes checked
 
     attr_accessor :element_id
 
@@ -12,6 +13,7 @@ module GoogleVisualr
     attr_accessor :lineColor
     attr_accessor :lineWidth
     attr_accessor :mapType
+    attr_accessor :useMapTypeControll
     attr_accessor :zoomLevel
 
     def render (element_id)
