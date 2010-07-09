@@ -19,25 +19,13 @@ module GoogleVisualr
 
       def script
         script   = "var formatter = new google.visualization.#{determine_google_class}("
-        script  <<  collect_parameters
+        script  <<  determine_parameters
         script  << ");"
 
         @columns.each do |column|
          script << "formatter.format(chart_data, #{column});"
         end
         return script
-      end
-
-      def collect_parameters
-        attributes = Array.new
-        instance_variable_names.each do |instance_variable|
-          next if instance_variable == "@columns"
-          key         = instance_variable.gsub("@", "")
-          value       = instance_variable_get(instance_variable)
-          attribute   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
-          attributes << attribute
-        end
-        return "{" + attributes.join(",") + "}"
       end
       
       protected
@@ -51,7 +39,24 @@ module GoogleVisualr
       def determine_google_class
         return (google_class || self.class.to_s.split('::').last)
       end
+      
+      # determines defined instance variables of child class
+      def determine_parameters
+        attributes = Array.new
 
+        variables  = instance_variable_names
+        variables.delete("@columns")
+
+        variables.each do |instance_variable|
+          key         = instance_variable.gsub("@", "")
+          value       = instance_variable_get(instance_variable)
+          attribute   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
+          attributes << attribute
+        end
+
+        return "{" + attributes.join(",") + "}"
+      end
+      
     end
     
  end
