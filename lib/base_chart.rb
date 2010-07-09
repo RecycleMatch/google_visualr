@@ -49,7 +49,6 @@ module GoogleVisualr
     #   To indicate a null cell, you can either specify null, or set empty string for a cell in an array, or omit trailing array members.
     #   So, to indicate a row with null for the first two cells, you could specify [ '', '', {cell_val}] or [null, null, {cell_val}].
     def initialize(options = {})
-
       @data_table = GoogleVisualr::DataTable::DataTable.new
 
       unless options.empty?
@@ -61,7 +60,6 @@ module GoogleVisualr
           @data_table.add_row(row[:c])
         end
       end
-
     end
     
     # DATA TABLE
@@ -97,10 +95,8 @@ module GoogleVisualr
     # Parameters:
     #   * formatter/s     [Required] One, or an array of formatters.
     def format(*formatters)
-
       @formatters ||= Array.new
       @formatters  += formatters
-
     end
     
     ### OPTIONS
@@ -110,11 +106,9 @@ module GoogleVisualr
     # Parameters:
     #  *options            [Required] A hash of configuration options.
     def set_options(options)
-
       options.each_pair do | key, value |
         send "#{key}=", value
       end
-
     end
     
     ### RENDER
@@ -139,6 +133,7 @@ module GoogleVisualr
       end
       code << "\n      var chart = new google.visualization.#{determine_google_class}(document.getElementById('#{element_id}'));"
       code << "\n      chart.draw(chart_data, #{determine_parameters});"
+      
       return code
     end
     
@@ -149,6 +144,7 @@ module GoogleVisualr
       script << "\n    }});"
       script << "\n  //]]>"
       script << "\n</script>"
+      
       return script
     end
         
@@ -178,7 +174,6 @@ module GoogleVisualr
 
     # determines defined instance variables of child class
     def determine_parameters
-
       attributes = Array.new
 
       variables  = instance_variable_names
@@ -191,9 +186,8 @@ module GoogleVisualr
         attribute   = "#{key}:#{GoogleVisualr::DataTable::Typecasting.typecast(value)}"
         attributes << attribute
       end
-
+      
       return "{" + attributes.join(",") + "}"
-
     end
 
 #   def add_row_cell(cell)
