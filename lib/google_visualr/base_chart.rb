@@ -17,55 +17,12 @@ module GoogleVisualr
     #
     # GoogleVisualr::visualization.new(data object):
     # Creates a visualization by passing a JavaScript-string-literal like data object into the data parameter. This object can contain formatting options.
-    #
-    ##############################
-    # Syntax Description of Data Object
-    ##############################
-    #
-    # The data object consists of two required top-level properties, cols and rows.
-    #
-    # * cols property
-    #
-    #   cols is an array of objects describing the ID and type of each column. Each property is an object with the following properties (case-sensitive):
-    #
-    #   * type            [Required] The data type of the data in the column. Supports the following string values:
-    #     - 'string'    : String value. Example values: v:'foo', v:'bar'
-    #     - 'number'    : Number value. Example values: v:7, v:3.14, v:-55
-    #     - 'boolean'   : Boolean value ('true' or 'false'). Example values: v:true, v:false
-    #     - 'date'      : Date object, with the time truncated. Example value: v:Date.parse('2010-01-01')
-    #     - 'datetime'  : DateTime/Time object, time inclusive. Example value: v:DateTime.parse('2010-01-01 14:20:25')
-    #     - 'timeofday' : Array of 3 numbers or 4 numbers, [Hour,Minute,Second,(Optional) Milliseconds]. Example value: v:[8, 15, 0]
-    #   * label           [Optional] A string value that some visualizations display for this column. Example: label:'Height'
-    #   * id              [Optional] A unique (basic alphanumeric) string ID of the column. Be careful not to choose a JavaScript keyword. Example: id:'col_1'
-    #
-    # * rows property
-    #
-    #   The rows property holds an array of row objects. Each row object has one required property called c, which is an array of cells in that row.
-    #
-    #   Each cell in the table is described by an object with the following properties:
-    #
-    #   * v               [Optional] The cell value. The data type should match the column data type.
-    #   * f               [Optional] A string version of the v value, formatted strictly for display only. If omitted, a string version of v will be used.
-    #
-    #   Cells in the row array should be in the same order as their column descriptions in cols.
-    #
-    #   To indicate a null cell, you can either specify null, or set empty string for a cell in an array, or omit trailing array members.
-    #   So, to indicate a row with null for the first two cells, you could specify [ '', '', {cell_val}] or [null, null, {cell_val}].
+    
     def initialize(options = {})
-      @data_table = GoogleVisualr::DataTable::DataTable.new
-
-      unless options.empty?
-        cols = options[:cols]
-        @data_table.add_columns(cols)
-
-        rows = options[:rows]
-        rows.each do |row|
-          @data_table.add_row(row[:c])
-        end
-      end
+      @data_table = GoogleVisualr::DataTable::DataTable.new(options)
     end
     
-    # DATA TABLE
+    # DATA TABLE HELPERS
     
     def add_column(type, label = '', id = '')
       @data_table.add_column(type, label, id)
