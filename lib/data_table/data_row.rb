@@ -17,6 +17,9 @@ module GoogleVisualr
       end
     
       def render
+
+        # FIXME: decide when to use .addRows or .addRows !!!
+
         if @data
           return "chart_data.addRow( [" +  @data.join(",")  + "] );"
         else
