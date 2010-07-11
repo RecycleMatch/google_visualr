@@ -61,11 +61,11 @@ module GoogleVisualr
         
         unless options.empty?
           cols = options[:cols]
-          @data_table.add_columns(cols)
+          add_columns(cols)
 
           rows = options[:rows]
           rows.each do |row|
-            @data_table.add_row(row[:c])
+            add_row(row[:c])
           end
         end
       end
