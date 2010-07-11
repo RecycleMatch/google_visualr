@@ -1,3 +1,4 @@
+require File.dirname(__FILE__) + '/lib/google_visualr'
 require File.dirname(__FILE__) + '/lib/data_table'
 require File.dirname(__FILE__) + '/lib/packages'
 require File.dirname(__FILE__) + '/lib/utilities'
