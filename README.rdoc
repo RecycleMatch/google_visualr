@@ -30,9 +30,9 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
   > cd my_app
   > vim config/environment.rb
 
-  insert:
+insert:
 
-  > gem.config "google_visualr", :version=>"1.0.0" 
+  gem.config "google_visualr", :version=>"1.0.0" 
 
 2) As plugin
 

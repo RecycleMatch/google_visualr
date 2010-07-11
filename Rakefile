@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "google_visualr"
-    gem.summary = %Q{ one-line summary of your gem}
-    gem.description = %Q{longer description of your gem}
+    gem.summary = %Q{A Ruby Wrapper for the Google Visualization API. Write Ruby code. Generate Javascript. Display a Google Visualization.}
+    gem.description = %Q{A Ruby Wrapper for the Google Visualization API. Write Ruby code. Generate Javascript. Display a Google Visualization.}
     gem.email = "salzburg@emjot.de"
     gem.homepage = "http://github.com/msalzburg/google_visualr"
     gem.authors = ["msalzburg"]
