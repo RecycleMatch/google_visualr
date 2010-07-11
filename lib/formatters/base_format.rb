@@ -2,6 +2,7 @@ module GoogleVisualr
   module Formatters
   
     class BaseFormat
+      include GoogleVisualr::Utilities::AttributeReflection
       include GoogleVisualr::Utilities::GoogleClassReflection
 
       # http://code.google.com/apis/visualization/documentation/reference.html#formatters
@@ -33,19 +34,18 @@ module GoogleVisualr
             
       # determines defined instance variables of child class
       def determine_parameters
-        attributes = Array.new
+        
+        parameters = Array.new
+        attributes  = get_attributes_except(["@columns"])
 
-        variables  = instance_variable_names
-        variables.delete("@columns")
-
-        variables.each do |instance_variable|
-          key         = instance_variable.gsub("@", "")
-          value       = instance_variable_get(instance_variable)
-          attribute   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
-          attributes << attribute
+        attributes.each do |attribute|
+          key         = attribute.gsub("@", "")
+          value       = instance_variable_get(attribute)
+          parameter   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
+          parameters << parameter
         end
 
-        return "{" + attributes.join(",") + "}"
+        return "{" + parameters.join(",") + "}"
       end
       
     end

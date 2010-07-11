@@ -1,6 +1,7 @@
 module GoogleVisualr
 
   class BaseChart
+    include GoogleVisualr::Utilities::AttributeReflection
     include GoogleVisualr::Utilities::GooglePackageReflection
     include GoogleVisualr::Utilities::GoogleClassReflection
 
@@ -154,20 +155,18 @@ module GoogleVisualr
 
     # determines defined instance variables of child class
     def determine_parameters
-      attributes = Array.new
-
-      variables  = instance_variable_names
-      variables.delete("@data_table")
-      variables.delete("@formatters")      
       
-      variables.each do |instance_variable|
-        key         = instance_variable.gsub("@", "")
-        value       = instance_variable_get(instance_variable)
-        attribute   = "#{key}:#{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
-        attributes << attribute
+      parameters = Array.new
+      attributes = get_attributes_except(["@data_table", "@formatters"])
+      
+      attributes.each do |attribute|
+        key         = attribute.gsub("@", "")
+        value       = instance_variable_get(attribute)
+        parameter   = "#{key}:#{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
+        parameters << parameter
       end
       
-      return "{" + attributes.join(",") + "}"
+      return "{" + parameters.join(",") + "}"
     end
 
 #   def add_row_cell(cell)

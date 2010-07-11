@@ -51,13 +51,7 @@ module GoogleVisualr
       #     - You can mix simple values and cell objects in the same method call.
       #     - To create an empty cell, use nil or empty string.
       def add_row(row = nil)
-
-        #if row.blank?
-        #  @rows << GoogleVisualr::DataTable::DataRow.new([''])
-        #else
-          @rows << GoogleVisualr::DataTable::DataRow.new(row)
-        #end
-
+        @rows << GoogleVisualr::DataTable::DataRow.new(row)
       end
 
       # Adds multiple rows to the visualization. You can call this method with data to populate a set of new rows or create new empty rows.
