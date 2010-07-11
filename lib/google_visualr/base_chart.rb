@@ -68,7 +68,7 @@ module GoogleVisualr
     # DATA TABLE
     
     def add_column(type, label = '', id = '')
-      @data_table.add_column (type, label, id)
+      @data_table.add_column(type, label, id)
     end
     
     def add_columns(columns)
