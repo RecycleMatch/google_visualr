@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class IntensityMap < BaseChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/intensitymap.html
 
       attr_accessor :colors

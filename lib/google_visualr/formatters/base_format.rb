@@ -5,6 +5,7 @@ module GoogleVisualr
       include GoogleVisualr::Utilities::AttributeReflection
       include GoogleVisualr::Utilities::GoogleClassReflection
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/reference.html#formatters
 
       attr_accessor :columns

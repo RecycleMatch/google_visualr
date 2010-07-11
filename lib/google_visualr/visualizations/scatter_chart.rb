@@ -3,7 +3,8 @@ module GoogleVisualr
 
     class ScatterChart < BaseChart
       include GoogleVisualr::Packages::CoreChart
-
+      
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/scatterchart.html
     
       attr_accessor :backgroundColor

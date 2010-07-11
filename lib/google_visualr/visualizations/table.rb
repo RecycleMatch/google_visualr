@@ -3,6 +3,7 @@ module GoogleVisualr
     
     class Table < BaseChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/table.html
       
       attr_accessor :allowHtml

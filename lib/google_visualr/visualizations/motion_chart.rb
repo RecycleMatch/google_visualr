@@ -2,7 +2,8 @@ module GoogleVisualr
   module Visualizations
 
     class MotionChart < BaseChart
-
+      
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/motionchart.html
       
       attr_accessor :height

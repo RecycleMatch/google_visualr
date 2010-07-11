@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class ImageLineChart < BaseChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/imagelinechart.html
       
       attr_accessor :backgroundColor

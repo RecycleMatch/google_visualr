@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class ImageSparkLine < BaseChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/imagesparkline.html
       
       attr_accessor :color

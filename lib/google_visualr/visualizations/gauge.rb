@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class Gauge < BaseChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/gauge.html
       
       attr_accessor :greenFrom

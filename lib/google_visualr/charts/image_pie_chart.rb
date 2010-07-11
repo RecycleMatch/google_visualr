@@ -2,7 +2,8 @@ module GoogleVisualr
   module Charts
 
     class ImagePieChart < BaseChart
-
+      
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/imagepiechart.html
       
       attr_accessor :backgroundColor

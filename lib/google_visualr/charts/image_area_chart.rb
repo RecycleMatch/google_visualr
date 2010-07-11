@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class ImageAreaChart < BaseChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/imageareachart.html
       
       attr_accessor :backgroundColor

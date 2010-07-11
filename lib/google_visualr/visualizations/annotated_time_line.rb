@@ -3,6 +3,7 @@ module GoogleVisualr
     
     class AnnotatedTimeLine < BaseChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html
       
       attr_accessor :allowHtml

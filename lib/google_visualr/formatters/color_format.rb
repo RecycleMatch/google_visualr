@@ -2,6 +2,9 @@ module GoogleVisualr
   module Formatters
     
     class ColorFormat < BaseFormat
+      
+      # google reference:
+      # http://code.google.com/apis/visualization/documentation/reference.html#colorformatter
 
       attr_accessor :ranges
       attr_accessor :gradient_ranges

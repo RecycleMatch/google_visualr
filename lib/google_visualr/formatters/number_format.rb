@@ -2,6 +2,9 @@ module GoogleVisualr
   module Formatters
     
     class NumberFormat < BaseFormat
+      
+      # google reference:
+      # http://code.google.com/apis/visualization/documentation/reference.html#numberformatter
 
       attr_accessor :decimalSymbol
       attr_accessor :fractionDigits

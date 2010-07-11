@@ -4,6 +4,7 @@ module GoogleVisualr
     class AreaChart < BaseChart
       include GoogleVisualr::Packages::CoreChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/areachart.html
       
       attr_accessor :backgroundColor

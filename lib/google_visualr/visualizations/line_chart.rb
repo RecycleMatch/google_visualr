@@ -4,6 +4,7 @@ module GoogleVisualr
     class LineChart < BaseChart
       include GoogleVisualr::Packages::CoreChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/linechart.html
 
       attr_accessor :backgroundColor

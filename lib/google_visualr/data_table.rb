@@ -6,6 +6,9 @@ module GoogleVisualr
     require File.dirname(__FILE__) + '/data_table/data_cell'
     
     class DataTable
+      
+      # google reference:
+      # http://code.google.com/apis/visualization/documentation/reference.html#DataTable
     
       attr_accessor :cols
       attr_accessor :rows

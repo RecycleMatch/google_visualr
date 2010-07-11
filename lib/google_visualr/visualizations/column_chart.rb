@@ -4,6 +4,7 @@ module GoogleVisualr
     class ColumnChart < BaseChart
       include GoogleVisualr::Packages::CoreChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/columnchart.html
       
       attr_accessor :backgroundColor

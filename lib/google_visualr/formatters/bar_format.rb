@@ -2,6 +2,9 @@ module GoogleVisualr
   module Formatters
     
     class BarFormat   < BaseFormat
+      
+      # google reference
+      # http://code.google.com/apis/visualization/documentation/reference.html#barformatter
 
       attr_accessor :base
       attr_accessor :colorNegative

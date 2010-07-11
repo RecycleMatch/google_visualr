@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class Map < BaseChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/map.html
       
       attr_accessor :enableScrollWheel

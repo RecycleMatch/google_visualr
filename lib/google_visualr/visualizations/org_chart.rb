@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class OrgChart < BaseChart
 
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/orgchart.html
       
       attr_accessor :allowCollapse

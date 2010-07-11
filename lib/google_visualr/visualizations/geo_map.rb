@@ -3,6 +3,7 @@ module GoogleVisualr
 
     class GeoMap < BaseChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/geomap.html
 
       attr_accessor :region

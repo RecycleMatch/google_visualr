@@ -4,6 +4,7 @@ module GoogleVisualr
     class PieChart < BaseChart
       include GoogleVisualr::Packages::CoreChart
       
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/piechart.html
 
       attr_accessor :backgroundColor

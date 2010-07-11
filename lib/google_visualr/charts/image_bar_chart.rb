@@ -2,7 +2,8 @@ module GoogleVisualr
   module Charts
 
     class ImageBarChart < BaseChart
-
+      
+      # google reference:
       # http://code.google.com/apis/visualization/documentation/gallery/imagebarchart.html
       
       attr_accessor :backgroundColor
