@@ -1,7 +1,7 @@
 module GoogleVisualr
 
   class BaseChart
-    include GoogleVisualr::Utilities::AttributeReflection
+    include GoogleVisualr::Utilities::GoogleAttributeReflection
     include GoogleVisualr::Utilities::GooglePackageReflection
     include GoogleVisualr::Utilities::GoogleClassReflection
 
@@ -92,7 +92,7 @@ module GoogleVisualr
         end
       end
       code << "\n      var chart = new google.visualization.#{determine_google_class}(document.getElementById('#{element_id}'));"
-      code << "\n      chart.draw(chart_data, #{determine_parameters});"
+      code << "\n      chart.draw(chart_data, #{determine_google_parameters});"
       
       return code
     end
@@ -110,20 +110,9 @@ module GoogleVisualr
         
     private
 
-    # determines defined instance variables of child class
-    def determine_parameters
-      
-      parameters = Array.new
-      attributes = get_attributes_except(["@data_table", "@formatters"])
-      
-      attributes.each do |attribute|
-        key         = attribute.gsub("@", "")
-        value       = instance_variable_get(attribute)
-        parameter   = "#{key}:#{GoogleVisualr::Utilities::TypeConversion.convert(value)}"
-        parameters << parameter
-      end
-      
-      return "{" + parameters.join(",") + "}"
+    # determines valid instance variables of child class
+    def determine_google_parameters
+      return determine_google_attributes(["@data_table", "@formatters"])      
     end
 
 #   def add_row_cell(cell)
@@ -132,13 +121,13 @@ module GoogleVisualr
 #
 #        attributes = Array.new
 #        cell.each_pair do |key, value|
-#          attributes << "#{key}: #{GoogleVisualr::Utilities::TypeConversion.convert(value)}"
+#          attributes << "#{key}: #{GoogleVisualr::Utilities::GoogleTypeConversion.convert(value)}"
 #        end
 #
 #        return "{" + attributes.join(",") + "}"
 #
 #      else
-#        return "#{GoogleVisualr::Utilities::TypeConversion.convert(cell)}"
+#        return "#{GoogleVisualr::Utilities::GoogleTypeConversion.convert(cell)}"
 #      end
 #
 #    end

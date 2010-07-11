@@ -1,7 +1,8 @@
 module GoogleVisualr
   module Utilities
     
-    class TypeConversion
+    class GoogleTypeConversion
+      include Singleton
       
       def self.convert(value)
         # If the column type is 'string'    , the value should be a string.
@@ -24,7 +25,7 @@ module GoogleVisualr
           when value.is_a?(DateTime)  ||  value.is_a?(Time)
             return "new Date(#{value.year}, #{value.month-1}, #{value.day}, #{value.hour}, #{value.min}, #{value.sec})"
           when value.is_a?(Array)
-            return "[" + value.collect { |item| GoogleVisualr::Utilities::TypeConversion.convert(item) }.join(",") + "]"
+            return "[" + value.collect { |item| GoogleVisualr::Utilities::GoogleTypeConversion.convert(item) }.join(",") + "]"
           when value.is_a?(Hash)
             res = Array.new
             value.each_pair{|key, value| res << "#{key}:'#{value}'"}

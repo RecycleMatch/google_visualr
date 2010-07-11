@@ -2,7 +2,7 @@ module GoogleVisualr
   module Formatters
   
     class BaseFormat
-      include GoogleVisualr::Utilities::AttributeReflection
+      include GoogleVisualr::Utilities::GoogleAttributeReflection
       include GoogleVisualr::Utilities::GoogleClassReflection
 
       # google reference:
@@ -22,11 +22,11 @@ module GoogleVisualr
 
       def script
         script   = "var formatter = new google.visualization.#{determine_google_class}("
-        script  <<  determine_parameters
+        script  <<  determine_google_parameters
         script  << ");"
 
         @columns.each do |column|
-         script << "formatter.format(chart_data, #{column});"
+         script << "formatter.format(chart_data, #{columns});"
         end
         return script
       end
@@ -34,19 +34,20 @@ module GoogleVisualr
       private
             
       # determines defined instance variables of child class
-      def determine_parameters
+      def determine_google_parameters
+        return determine_google_attriutes(["@columns"])
         
-        parameters = Array.new
-        attributes  = get_attributes_except(["@columns"])
+#        parameters = Array.new
+#        attributes  = get_attributes_except(["@columns"])
 
-        attributes.each do |attribute|
-          key         = attribute.gsub("@", "")
-          value       = instance_variable_get(attribute)
-          parameter   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
-          parameters << parameter
-        end
-
-        return "{" + parameters.join(",") + "}"
+#        attributes.each do |attribute|
+#          key         = attribute.gsub("@", "")
+#          value       = instance_variable_get(attribute)
+#          parameter   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
+#          parameters << parameter
+#        end
+#
+#        return "{" + parameters.join(",") + "}"
       end
       
     end
