@@ -1,9 +1,9 @@
 module GoogleVisualr
   module Utilities
     
-    class TypeCasting
+    class TypeConversion
       
-      def self.cast(value)
+      def self.convert(value)
         # If the column type is 'string'    , the value should be a string.
         # If the column type is 'number'    , the value should be a number.
         # If the column type is 'boolean'   , the value should be a boolean.
@@ -24,7 +24,7 @@ module GoogleVisualr
           when value.is_a?(DateTime)  ||  value.is_a?(Time)
             return "new Date(#{value.year}, #{value.month-1}, #{value.day}, #{value.hour}, #{value.min}, #{value.sec})"
           when value.is_a?(Array)
-            return "[" + value.collect { |item| GoogleVisualr::Utilities::TypeCasting.cast(item) }.join(",") + "]"
+            return "[" + value.collect { |item| GoogleVisualr::Utilities::TypeConversion.convert(item) }.join(",") + "]"
           when value.is_a?(Hash)
             res = Array.new
             value.each_pair{|key, value| res << "#{key}:'#{value}'"}

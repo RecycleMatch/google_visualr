@@ -119,7 +119,7 @@ module GoogleVisualr
       attributes.each do |attribute|
         key         = attribute.gsub("@", "")
         value       = instance_variable_get(attribute)
-        parameter   = "#{key}:#{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
+        parameter   = "#{key}:#{GoogleVisualr::Utilities::TypeConversion.convert(value)}"
         parameters << parameter
       end
       
@@ -132,13 +132,13 @@ module GoogleVisualr
 #
 #        attributes = Array.new
 #        cell.each_pair do |key, value|
-#          attributes << "#{key}: #{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
+#          attributes << "#{key}: #{GoogleVisualr::Utilities::TypeConversion.convert(value)}"
 #        end
 #
 #        return "{" + attributes.join(",") + "}"
 #
 #      else
-#        return "#{GoogleVisualr::Utilities::TypeCasting.cast(cell)}"
+#        return "#{GoogleVisualr::Utilities::TypeConversion.convert(cell)}"
 #      end
 #
 #    end

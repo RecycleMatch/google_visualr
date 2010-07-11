@@ -21,7 +21,7 @@ module GoogleVisualr
       def render
         res = ""
         res << "chart_data.setCell("
-        res << "#{row_index}, #{column_index}, #{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
+        res << "#{row_index}, #{column_index}, #{GoogleVisualr::Utilities::TypeConversion.convert(value)}"
         res << ", '#{formatted_value}'" unless formatted_value.blank?
         res << ", '#{properties}'"      unless properties.blank?
         res << ");"

@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["msalzburg"]
   s.date = %q{2010-07-11}
-  s.description = %q{longer description of your gem}
+  s.description = %q{A Ruby Wrapper for the Google Visualization API. Write Ruby code. Generate Javascript. Display a Google Visualization.}
   s.email = %q{salzburg@emjot.de}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -50,7 +50,7 @@ Gem::Specification.new do |s|
      "lib/google_visualr/utilities/attribute_reflection.rb",
      "lib/google_visualr/utilities/google_class_reflection.rb",
      "lib/google_visualr/utilities/google_package_reflection.rb",
-     "lib/google_visualr/utilities/type_casting.rb",
+     "lib/google_visualr/utilities/type_conversion.rb",
      "lib/google_visualr/visualizations.rb",
      "lib/google_visualr/visualizations/annotated_time_line.rb",
      "lib/google_visualr/visualizations/area_chart.rb",
@@ -74,7 +74,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{one-line summary of your gem}
+  s.summary = %q{A Ruby Wrapper for the Google Visualization API. Write Ruby code. Generate Javascript. Display a Google Visualization.}
   s.test_files = [
     "test/helper.rb",
      "test/test_google_visualr.rb"
