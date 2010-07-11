@@ -2,6 +2,7 @@ module GoogleVisualr
   module Formatters
   
     class BaseFormat
+      include GoogleVisualr::Utilities::GoogleClassReflection
 
       # http://code.google.com/apis/visualization/documentation/reference.html#formatters
 
@@ -27,19 +28,9 @@ module GoogleVisualr
         end
         return script
       end
-      
-      protected
-      
-      def google_class
-        return nil
-      end
-      
+            
       private
-      
-      def determine_google_class
-        return (google_class || self.class.to_s.split('::').last)
-      end
-      
+            
       # determines defined instance variables of child class
       def determine_parameters
         attributes = Array.new

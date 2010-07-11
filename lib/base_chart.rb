@@ -1,6 +1,8 @@
 module GoogleVisualr
 
   class BaseChart
+    include GoogleVisualr::Utilities::GooglePackageReflection
+    include GoogleVisualr::Utilities::GoogleClassReflection
 
     attr_accessor :data_table
     attr_accessor :formatters
@@ -148,29 +150,7 @@ module GoogleVisualr
       return script
     end
         
-    protected
-    
-    # Defines a concrete google api package name
-    def google_package
-      return nil
-    end
-    
-    # Defines a concrete google api class name
-    def google_class
-      return nil
-    end
-    
     private
-    
-    # Determines the google api package name
-    def determine_google_package
-      return (google_package || self.class.to_s.split('::').last.downcase)
-    end
-
-    # Determines the google api class name
-    def determine_google_class
-      return (google_class || self.class.to_s.split('::').last)
-    end
 
     # determines defined instance variables of child class
     def determine_parameters
@@ -183,7 +163,7 @@ module GoogleVisualr
       variables.each do |instance_variable|
         key         = instance_variable.gsub("@", "")
         value       = instance_variable_get(instance_variable)
-        attribute   = "#{key}:#{GoogleVisualr::DataTable::Typecasting.typecast(value)}"
+        attribute   = "#{key}:#{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
         attributes << attribute
       end
       
@@ -196,13 +176,13 @@ module GoogleVisualr
 #
 #        attributes = Array.new
 #        cell.each_pair do |key, value|
-#          attributes << "#{key}: #{GoogleVisualr::DataTable::Typecasting.typecast(value)}"
+#          attributes << "#{key}: #{GoogleVisualr::Utilities::TypeCasting.cast(value)}"
 #        end
 #
 #        return "{" + attributes.join(",") + "}"
 #
 #      else
-#        return "#{GoogleVisualr::DataTable::Typecasting.typecast(cell)}"
+#        return "#{GoogleVisualr::Utilities::TypeCasting.cast(cell)}"
 #      end
 #
 #    end

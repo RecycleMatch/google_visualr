@@ -1,7 +1,6 @@
 module GoogleVisualr
   module DataTable
     
-    require File.dirname(__FILE__) + '/data_table/typecasting'
     require File.dirname(__FILE__) + '/data_table/data_column'
     require File.dirname(__FILE__) + '/data_table/data_row'
     require File.dirname(__FILE__) + '/data_table/data_cell'
