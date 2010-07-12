@@ -25,22 +25,22 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
 
 1) By gem (Rails 2.3.8):
 
-  > gem install google_visualr
-  > rails my_app
-  > cd my_app
-  > vim config/environment.rb
+	> gem install google_visualr
+	> rails my_app
+	> cd my_app
+	> vim config/environment.rb
 
 insert:
 
-  gem.config "google_visualr", :version=>"1.0.0" 
+	gem.config "google_visualr", :version=>"1.0.0" 
 
 2) As plugin
 
 Just install the GitHub repository into your app/vendor/plugin folder.
 
-  > rails my_app
-  > cd my_app
-  > script/plugin install git://github.com/msalzburg/google_visualr.git
+	> rails my_app
+	> cd my_app
+	> script/plugin install git://github.com/msalzburg/google_visualr.git
 
 = Basics
 
@@ -51,32 +51,32 @@ Please review the {Docs}[http://googlevisualr.heroku.com/docs] for detailed docu
 
 In your Rails layout, load Google Ajax API in the head tag, at the very top.
 
-  <script src='http://www.google.com/jsapi'></script>
+	<script src='http://www.google.com/jsapi'></script>
 
 In your Rails controller, create a DataTable and populate with column headers, and row values.
 
-  # Create DataTable
+	# Create DataTable
 	data = GoogleVisualr::DataTable::DataTable.new
 
 	# Add Column Headers
-  data.add_column('string', 'Year' )
-  data.add_column('number', 'Sales')
-  data.add_column('number', 'Expenses')
+	data.add_column('string', 'Year' )
+	data.add_column('number', 'Sales')
+	data.add_column('number', 'Expenses')
 
-  # Add Rows and Values
-  data.add_rows(4)
-  data.set_value(0, 0, '2004')
-  data.set_value(0, 1, 1000)
-  data.set_value(0, 2, 400)
-  data.set_value(1, 0, '2005')
-  data.set_value(1, 1, 1170)
-  data.set_value(1, 2, 460)
-  data.set_value(2, 0, '2006')
-  data.set_value(2, 1, 1500)
-  data.set_value(2, 2, 660)
-  data.set_value(3, 0, '2007')
-  data.set_value(3, 1, 1030)
-  data.set_value(3, 2, 540)
+	# Add Rows and Values
+	data.add_rows(4)
+	data.set_value(0, 0, '2004')
+	data.set_value(0, 1, 1000)
+	data.set_value(0, 2, 400)
+	data.set_value(1, 0, '2005')
+	data.set_value(1, 1, 1170)
+	data.set_value(1, 2, 460)
+	data.set_value(2, 0, '2006')
+	data.set_value(2, 1, 1500)
+	data.set_value(2, 2, 660)
+	data.set_value(3, 0, '2007')
+	data.set_value(3, 1, 1030)
+	data.set_value(3, 2, 540)
 
 
 Initialize a visualization (area chart) and pass options and the DataTable
@@ -85,8 +85,8 @@ Initialize a visualization (area chart) and pass options and the DataTable
 
 In your Rails view, render visualization.
 
-  <div id='chart'></div>
-  <%= @chart.render('chart') %>
+	<div id='chart'></div>
+	<%= @chart.render('chart') %>
 
 = Support
 
