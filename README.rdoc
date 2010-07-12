@@ -74,9 +74,7 @@ In your Rails controller, create a DataTable and populate with column headers, a
 	data.set_value(3, 1, 1030)
 	data.set_value(3, 2, 540)
 
-
-Initialize a visualization (area chart) and pass options and the DataTable
-
+	# Initialize a visualization (area chart) and pass options and the DataTable
 	@chart = GoogleVisualr::Visualizations::AreaChart.new({ :width => 400, :height => 240 }, data )
 
 In your Rails layout, load Google Ajax API in the head tag, at the very top.
