@@ -1,5 +1,6 @@
 module GoogleVisualr
   module Utilities
+    
     module GoogleAttributeReflection
       
       private
@@ -24,5 +25,6 @@ module GoogleVisualr
       end
       
     end
+  
   end
 end

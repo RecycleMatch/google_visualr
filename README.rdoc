@@ -23,14 +23,14 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
 
 = Install
 
-1) By gem (Rails 2.3.8):
+1) As gem (Rails 2.3.8):
 
 	> gem install google_visualr
 	> rails my_app
 	> cd my_app
 	> vim config/environment.rb
 
-insert:
+Insert:
 
 	gem.config "google_visualr", :version=>"1.0.0" 
 

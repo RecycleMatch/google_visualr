@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["msalzburg"]
-  s.date = %q{2010-07-11}
+  s.date = %q{2010-07-12}
   s.description = %q{A Ruby Wrapper for the Google Visualization API. Write Ruby code. Generate Javascript. Display a Google Visualization.}
   s.email = %q{salzburg@emjot.de}
   s.extra_rdoc_files = [
@@ -45,12 +45,13 @@ Gem::Specification.new do |s|
      "lib/google_visualr/formatters/color_format.rb",
      "lib/google_visualr/formatters/date_format.rb",
      "lib/google_visualr/formatters/number_format.rb",
+     "lib/google_visualr/formatters/pattern_format.rb",
      "lib/google_visualr/packages.rb",
      "lib/google_visualr/utilities.rb",
-     "lib/google_visualr/utilities/attribute_reflection.rb",
+     "lib/google_visualr/utilities/google_attribute_reflection.rb",
      "lib/google_visualr/utilities/google_class_reflection.rb",
      "lib/google_visualr/utilities/google_package_reflection.rb",
-     "lib/google_visualr/utilities/type_conversion.rb",
+     "lib/google_visualr/utilities/google_type_conversion.rb",
      "lib/google_visualr/visualizations.rb",
      "lib/google_visualr/visualizations/annotated_time_line.rb",
      "lib/google_visualr/visualizations/area_chart.rb",

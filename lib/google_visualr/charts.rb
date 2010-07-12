@@ -1,4 +1,5 @@
 module GoogleVisualr
+  
   module Charts
     
     require File.dirname(__FILE__) + '/charts/image_area_chart'
@@ -8,4 +9,5 @@ module GoogleVisualr
     require File.dirname(__FILE__) + '/charts/image_spark_line'
   
   end
+  
 end

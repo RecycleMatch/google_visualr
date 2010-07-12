@@ -1,5 +1,6 @@
 module GoogleVisualr
   module Packages
+    
     module CoreChart
 
       protected
@@ -9,5 +10,6 @@ module GoogleVisualr
       end
 
     end
+  
   end
 end

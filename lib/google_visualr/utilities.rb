@@ -1,4 +1,5 @@
 module GoogleVisualr
+  
   module Utilities
     
     require File.dirname(__FILE__) + '/utilities/google_attribute_reflection'
@@ -7,4 +8,5 @@ module GoogleVisualr
     require File.dirname(__FILE__) + '/utilities/google_type_conversion'
   
   end
+  
 end

@@ -1,4 +1,5 @@
 module GoogleVisular
+  
   module Visualizations  
 
     require File.dirname(__FILE__) + '/visualizations/annotated_time_line'
@@ -17,4 +18,5 @@ module GoogleVisular
     require File.dirname(__FILE__) + '/visualizations/table'
 
   end
+  
 end
