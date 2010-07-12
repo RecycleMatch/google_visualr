@@ -12,6 +12,7 @@ module GoogleVisualr
       def initialize
         @ranges           = Array.new
         @gradient_ranges  = Array.new
+        super()
       end
 
       def add_range(from, to, color, bgcolor)
@@ -31,7 +32,7 @@ module GoogleVisualr
       end
 
       def script
-        script  = "var formatter = new google.visualization.ColorFormat();"
+        script  = "\nvar formatter = new google.visualization.#{determine_google_class}();"
         @ranges.each do |r|
           script << "formatter.addRange( #{r[:from]}, #{r[:to]}, '#{r[:color]}', '#{r[:bgcolor]}' );"
         end

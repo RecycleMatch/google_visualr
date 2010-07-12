@@ -57,16 +57,16 @@ module GoogleVisualr
       #   To indicate a null cell, you can either specify null, or set empty string for a cell in an array, or omit trailing array members.
       #   So, to indicate a row with null for the first two cells, you could specify [ '', '', {cell_val}] or [null, null, {cell_val}].
       
-      def initialize(options = {})
+      def initialize(data = {})
         @cols  = Array.new
         @rows  = Array.new
         @cells = Array.new
         
-        unless options.empty?
-          cols = options[:cols]
+        unless data.empty?
+          cols = data[:cols]
           add_columns(cols)
 
-          rows = options[:rows]
+          rows = data[:rows]
           rows.each do |row|
             add_row(row[:c])
           end
@@ -147,8 +147,7 @@ module GoogleVisualr
       #   * value           [Required] The cell value. The data type should match the column data type.
       def set_value(row_index, column_index, value)
         @cells << GoogleVisualr::DataTable::DataCell.new(row_index, column_index, value)
-      end
-    
+      end   
     
       def render
         res = "var chart_data = new google.visualization.DataTable();"

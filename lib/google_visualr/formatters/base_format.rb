@@ -11,6 +11,8 @@ module GoogleVisualr
       attr_accessor :columns
 
       def initialize(options = {})
+        @columns = Array.new
+        
         options.each_pair do | key, value |
           self.send "#{key}=", value
         end
@@ -21,12 +23,12 @@ module GoogleVisualr
       end
 
       def script
-        script   = "var formatter = new google.visualization.#{determine_google_class}("
+        script   = "\nvar formatter = new google.visualization.#{determine_google_class}("
         script  <<  determine_google_parameters
         script  << ");"
 
         @columns.each do |column|
-         script << "formatter.format(chart_data, #{columns});"
+         script << "formatter.format(chart_data, #{column});"
         end
         return script
       end
@@ -35,19 +37,7 @@ module GoogleVisualr
             
       # determines defined instance variables of child class
       def determine_google_parameters
-        return determine_google_attriutes(["@columns"])
-        
-#        parameters = Array.new
-#        attributes  = get_attributes_except(["@columns"])
-
-#        attributes.each do |attribute|
-#          key         = attribute.gsub("@", "")
-#          value       = instance_variable_get(attribute)
-#          parameter   = key + ":" + (value.is_a?(String) ? "'" + value + "'" : value.to_s)
-#          parameters << parameter
-#        end
-#
-#        return "{" + parameters.join(",") + "}"
+        return determine_google_attributes(["@columns"])
       end
       
     end

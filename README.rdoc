@@ -53,36 +53,35 @@ In your Rails layout, load Google Ajax API in the head tag, at the very top.
 
   <script src='http://www.google.com/jsapi'></script>
 
-In your Rails controller, initialize a visualization (area chart) with an empty constructor.
+In your Rails controller, create a DataTable and populate with column headers, and row values.
 
-  @chart = GoogleVisualr::Visualizations::AreaChart.new
+  # Create DataTable
+	data = GoogleVisualr::DataTable::DataTable.new
 
-Populate visualization with column headers, and row values.
-
-  # Add Column Headers
-  @chart.add_column('string', 'Year' )
-  @chart.add_column('number', 'Sales')
-  @chart.add_column('number', 'Expenses')
+	# Add Column Headers
+  data.add_column('string', 'Year' )
+  data.add_column('number', 'Sales')
+  data.add_column('number', 'Expenses')
 
   # Add Rows and Values
-  @chart.add_rows(4)
-  @chart.set_value(0, 0, '2004')
-  @chart.set_value(0, 1, 1000)
-  @chart.set_value(0, 2, 400)
-  @chart.set_value(1, 0, '2005')
-  @chart.set_value(1, 1, 1170)
-  @chart.set_value(1, 2, 460)
-  @chart.set_value(2, 0, '2006')
-  @chart.set_value(2, 1, 1500)
-  @chart.set_value(2, 2, 660)
-  @chart.set_value(3, 0, '2007')
-  @chart.set_value(3, 1, 1030)
-  @chart.set_value(3, 2, 540)
+  data.add_rows(4)
+  data.set_value(0, 0, '2004')
+  data.set_value(0, 1, 1000)
+  data.set_value(0, 2, 400)
+  data.set_value(1, 0, '2005')
+  data.set_value(1, 1, 1170)
+  data.set_value(1, 2, 460)
+  data.set_value(2, 0, '2006')
+  data.set_value(2, 1, 1500)
+  data.set_value(2, 2, 660)
+  data.set_value(3, 0, '2007')
+  data.set_value(3, 1, 1030)
+  data.set_value(3, 2, 540)
 
-Configure visualization with options.
 
-  @chart.width = 400
-  @chart.height = 240
+Initialize a visualization (area chart) and pass options and the DataTable
+
+	@chart = GoogleVisualr::Visualizations::AreaChart.new({ :width => 400, :height => 240 }, data )
 
 In your Rails view, render visualization.
 
