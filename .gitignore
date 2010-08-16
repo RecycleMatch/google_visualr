@@ -1,6 +1,9 @@
 ## MAC OS
 .DS_Store
 
+## SUBVERSION
+.svn
+
 ## TEXTMATE
 *.tmproj
 tmtags
