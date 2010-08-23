@@ -10,8 +10,6 @@ module GoogleVisualr
       attr_accessor :colors
       attr_accessor :enableEvents
       attr_accessor :height
-      attr_accessor :isStacked
-      attr_accessor :is_Vertical
       attr_accessor :legend
       attr_accessor :max
       attr_accessor :min

@@ -22,6 +22,7 @@ module GoogleVisualr
       attr_accessor :displayZoomButtons
       attr_accessor :fill
       attr_accessor :highlightDot
+      attr_accessor :legendPosition
       attr_accessor :max
       attr_accessor :min
       attr_accessor :numberFormats
