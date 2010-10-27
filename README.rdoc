@@ -23,7 +23,7 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
 
 = Install
 
-== Rails 3 ==
+== Rails 3
 
 Just add the following to your Gemfile. 
 
@@ -33,7 +33,7 @@ Then let bundler handle the rest:
 
   > bundle install
 
-== Rails 2 ==
+== Rails 2
 
 Just install the GitHub repository into your app/vendor/plugin folder.
 
