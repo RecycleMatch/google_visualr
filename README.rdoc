@@ -94,10 +94,15 @@ In your Rails layout, load Google Ajax API in the head tag, at the very top.
 
 	<script src='http://www.google.com/jsapi'></script>
 
-In your Rails view, render visualization.
+In your Rails view, render the visualization.  For Rails 2, use:
 
 	<div id='chart'></div>
 	<%= @chart.render('chart') %>
+
+You'll need to add "raw" in Rails 3 to prevent escaping (by default):
+
+<div id='chart'></div>
+<%= raw @chart.render('chart') %>
 
 = Support
 
