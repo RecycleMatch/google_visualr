@@ -23,7 +23,26 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
 
 = Install
 
+<<<<<<< HEAD
+== Rails 3
+
+Just add the following to your Gemfile. 
+
+  gem 'google_visualr', :git => 'git@github.com:burkestar/google_visualr.git'
+
+Then let bundler handle the rest:
+
+  > bundle install
+
+== Rails 2
+
+Just install the GitHub repository into your app/vendor/plugin folder.
+
+  > rails my_app; cd my_app;
+  > script/plugin install git://github.com/winston/google_visualr.git
+=======
 1) As gem (Rails 2.3.8):
+>>>>>>> a841475a783ae524df0b3527163690ed5570f52d
 
 	> gem install google_visualr
 	> rails my_app
