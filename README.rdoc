@@ -29,7 +29,7 @@ Do note that GoogleVisualr is not a 100% complete wrapper for the Google Visuali
 
 Edit the Gemfile and add:
 
-  gem 'google_visualr', :git => 'git@github.com:burkestar/google_visualr.git'
+  gem 'google_visualr', :git => 'git://github.com/burkestar/google_visualr.git'
 
 Then
 
