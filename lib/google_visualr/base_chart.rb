@@ -44,8 +44,8 @@ module GoogleVisualr
     #  *element_id            [Required] The ID of the DIV element that the visualization should be rendered in.
     #
     # Note: This is the super method.    
-    def render(element_id)
-      return render_script_tag(render_javascript_code(element_id))
+    def render(element_id, options={})
+      return render_script_tag(render_javascript_code(element_id, options))
     end
     
     def render_script_tag(code)
@@ -59,7 +59,7 @@ module GoogleVisualr
       return script
     end
     
-    def render_javascript_code(element_id)
+    def render_javascript_code(element_id, options={})
       code = "\n    google.load('visualization','1', {packages: ['#{determine_google_package}'], callback: function() {"
       code << "\n      #{@data_table.render}"
       if @formatters
@@ -69,6 +69,7 @@ module GoogleVisualr
       end
       code << "\n      var chart = new google.visualization.#{determine_google_class}(document.getElementById('#{element_id}'));"
       code << "\n      chart.draw(chart_data, #{determine_google_parameters});"
+      code << "\n      #{options[:callback]}" if options[:callback]
       
       return code
     end

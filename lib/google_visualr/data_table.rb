@@ -167,6 +167,14 @@ module GoogleVisualr
         return res
       end
     
+      def to_csv
+        require 'csv'
+        return CSV.generate do |csv|
+          csv << @cols.collect {|col| col.label}
+          @rows.each {|row| csv << row.data}
+        end
+      end
+    
     end
     
   end
